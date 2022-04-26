@@ -1,5 +1,7 @@
 package com.example.emlak.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +29,7 @@ public class EmlakciController {
 	public String EmlakciEkle(Model model)
 	{
 		model.addAttribute("Emlakci", new Emlakci());
-		return "emlakciekle";
-		
+		return "emlakciEkle";		
 	}
 	@PostMapping("/emlakcistore")
 	public void saveEmlakci(@RequestBody EmlakciSaveDto emlakci)
@@ -42,6 +43,13 @@ public class EmlakciController {
 		model.addAttribute("Emlakci",emlakci);
 		saveEmlakci(emlakci);
 		  return "index";
+	}
+	@GetMapping("/emlakcilistele")
+	public String EmlakciListele(Model model)
+	{
+		List<Emlakci> emlakcilar = emlakciManager.getAll();
+		model.addAttribute("emlakcilar",emlakcilar);
+		return "emlakcıListele";
 	}
 
 }
