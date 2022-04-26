@@ -11,25 +11,26 @@
 		<div>
 		<h1>Emlakçı Kaydı</h1>
 		</div>
-		<form th:action="@{emlakcistore}" th:object="${emlakci}" method="POST">
+		<form th:action="@{emlakcistoreform}" th:object="${emlakci}" method="POST">
 		<div>
-		<label for="cname">İsim</label>	
-		<input class="form-control" type="text" name="name" id="name" />		
+			<label for="cname">İsim</label>	
+			<input class="form-control" type="text" name="name" id="name" />		
 		</div>
-		
 		<div>
-		<label>Soyisim</label>	
-		<input class="form-control" type="text" name="surname" id="surname" />
+			<label>E-Posta Adresi</label>
+			<input  class="form-control" type="email" name="email" id="email" />	
+		</div>		
+		<div>
+			<label>Adres</label>	
+			<input class="form-control" type="text" name="address" id="address" />
+		</div>		
+		<div>
+			<label>Telefon</label>	
+			<input  class="form-control" type="text" name="phone" id="phone" />
 		</div>
-		
 		<div>
-		<label>E-Posta Adresi</label>
-		<input  class="form-control" type="email" name="email" id="email" />	
-		</div>
-		
-		<div>
-		<label>Müşteri Tipi</label>	
-		<input  class="form-control" type="text" name="type" id="type" />
+			<label>Fax</label>	
+			<input  class="form-control" type="text" name="fax" id="fax" />
 		</div>
 		<br>
 		<input  class="btn btn-success" type="submit" value="Kaydet" />
