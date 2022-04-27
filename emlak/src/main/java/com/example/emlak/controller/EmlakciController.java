@@ -38,7 +38,7 @@ public class EmlakciController {
 	}
 	
 	@PostMapping("/emlakcistoreform")
-	public String Emlakcistore(@ModelAttribute EmlakciSaveDto emlakci, BindingResult result, Model model)
+	public String EmlakciStore(@ModelAttribute EmlakciSaveDto emlakci, BindingResult result, Model model)
 	{
 		model.addAttribute("Emlakci",emlakci);
 		saveEmlakci(emlakci);
