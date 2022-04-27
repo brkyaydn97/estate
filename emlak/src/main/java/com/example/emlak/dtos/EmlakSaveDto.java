@@ -19,6 +19,14 @@ public class EmlakSaveDto {
 		this.emlakci_id = emlakci_id;
 	}
 	
+	public EmlakSaveDto(int size, int roomCount, int floor, Long emlakci_id) {
+		super();
+		this.size = size;
+		this.roomCount = roomCount;
+		this.floor = floor;
+		this.emlakci_id = emlakci_id;
+	}
+
 	public int getSize() {
 		return size;
 	}

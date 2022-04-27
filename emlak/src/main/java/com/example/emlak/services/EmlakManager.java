@@ -40,7 +40,6 @@ public class EmlakManager {
 		musteri.setId(saveDto.getMusteri_id());
 		emlakci.setId(saveDto.getEmlakci_id());
 		emlak.setEmlakci(emlakci);
-		emlak.setMusteri(musteri);
 		emlakRepo.save(emlak);
 	}
 	
