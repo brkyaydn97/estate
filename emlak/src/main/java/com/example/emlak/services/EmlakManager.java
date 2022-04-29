@@ -32,14 +32,24 @@ public class EmlakManager {
 	
 	public void save(EmlakSaveDto saveDto) {
 		Emlak emlak = new Emlak();
-		Musteri musteri = new Musteri();
 		Emlakci emlakci = new Emlakci();
+		emlak.setSize(saveDto.getSize());
+		emlak.setFloor(saveDto.getFloor());
+		emlak.setRoomCount(saveDto.getRoomCount());		
+		emlakci.setId(saveDto.getEmlakci_id());
+		emlak.setEmlakci(emlakci);
+		emlakRepo.save(emlak);
+	}
+	
+	public void sell(EmlakSaveDto saveDto)
+	{
+		Emlak emlak=emlakRepo.getById(saveDto.getId());
+		Musteri musteri = new Musteri();
 		emlak.setSize(saveDto.getSize());
 		emlak.setFloor(saveDto.getFloor());
 		emlak.setRoomCount(saveDto.getRoomCount());
 		musteri.setId(saveDto.getMusteri_id());
-		emlakci.setId(saveDto.getEmlakci_id());
-		emlak.setEmlakci(emlakci);
+		emlak.setMusteri(musteri);
 		emlakRepo.save(emlak);
 	}
 	

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.emlak.dtos.MusteriSaveDto;
+import com.example.emlak.entity.Emlak;
 import com.example.emlak.entity.Musteri;
 import com.example.emlak.repos.MusteriRepo;
 
@@ -29,5 +30,8 @@ public void save(MusteriSaveDto saveDto)
 public List<Musteri> getAll()
 {
 	return musteriRepo.findAll();
+}
+public Musteri findById(Long id) {
+	return musteriRepo.getById(id); 
 }
 }

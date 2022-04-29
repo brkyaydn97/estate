@@ -1,6 +1,7 @@
 package com.example.emlak.dtos;
 
 public class EmlakSaveDto {
+	private Long id;
 	private int size;
 	private int roomCount;
 	private int floor;
@@ -11,6 +12,14 @@ public class EmlakSaveDto {
 	public EmlakSaveDto() {
 	}
 	
+	public EmlakSaveDto(int size, int roomCount, int floor, Long musteri_id, Long emlakci_id,Long id) {
+		this.id=id;
+		this.size = size;
+		this.roomCount = roomCount;
+		this.floor = floor;
+		this.musteri_id = musteri_id;
+		this.emlakci_id = emlakci_id;
+	}
 	public EmlakSaveDto(int size, int roomCount, int floor, Long musteri_id, Long emlakci_id) {
 		this.size = size;
 		this.roomCount = roomCount;
@@ -56,6 +65,14 @@ public class EmlakSaveDto {
 	}
 	public void setEmlakci_id(Long emlakci_id) {
 		this.emlakci_id = emlakci_id;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	
