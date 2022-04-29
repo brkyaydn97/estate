@@ -4,7 +4,6 @@ public class EmlakSearchDto {
 	private int size;
 	private int roomCount;
 	private int floor;
-	
 	public EmlakSearchDto() {
 	}
 
@@ -12,6 +11,7 @@ public class EmlakSearchDto {
 		this.size = size;
 		this.roomCount = roomCount;
 		this.floor = floor;
+		
 	}
 
 	public int getSize() {

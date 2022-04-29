@@ -54,7 +54,7 @@ public class EmlakManager {
 	}
 	
 	public List<Emlak> search(EmlakSearchDto searchDto) {
-		return emlakRepo.getBySizeAndRoomCountAndFloor(searchDto.getSize(), searchDto.getRoomCount(), searchDto.getFloor());
+		return emlakRepo.getBySizeOrRoomCountOrFloor(searchDto.getSize(), searchDto.getRoomCount(), searchDto.getFloor());
 		
 	}
 	

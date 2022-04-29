@@ -62,6 +62,15 @@ public class EmlakController {
 		return "emlakEkle";
 	}
 	
+	@GetMapping("/emlakarama")
+	public String emlakAra(Model model)
+	{
+		model.addAttribute("Emlak", new Emlak());
+		List<Emlakci> emlakcilar= EmlakciListesi();
+		model.addAttribute("emlakcilar",emlakcilar);
+		return "emlakAra";
+		
+	}
 	@PostMapping("/emlakstore")
 	public void saveEmlak(@RequestBody EmlakSaveDto emlak)
 	{
@@ -85,6 +94,16 @@ public class EmlakController {
 	public List<Emlak> searchEmlak(@RequestBody EmlakSearchDto emlak) 
 	{
 		return emlakManager.search(emlak);
+	}
+	
+	@PostMapping("/emlakSearchForm")
+	public String searchEmlakForm(@ModelAttribute EmlakSearchDto emlak,BindingResult result,Model model)
+	{
+		model.addAttribute("Emlak",emlak);
+		List<Emlak> emlaklar= searchEmlak(emlak);
+		model.addAttribute("emlaklar",emlaklar);
+		return "emlakListele";
+		
 	}
 	
 	@GetMapping("/getByMusteri")
